@@ -16,9 +16,8 @@ public class App
 		int choice;
 		Scanner myObj = new Scanner(System.in);
 		System.out.println("Main Page");
-		System.out.println("1.Login as User");
-		System.out.println("2.Login as Admin");
-		System.out.println("3.Register");
+		System.out.println("1. Login");
+		System.out.println("2. Register");
 		System.out.println("Input Choice:");
 		choice = myObj.nextInt();
 		do{
