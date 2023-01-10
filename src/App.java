@@ -25,14 +25,11 @@ public class App
 		    usersetting();
 		}
 		else if(choice == 2){
-		    adminsetting();
-		}
-		else if(choice == 3){
 		    registersetting();
 		}
 		else{
 		    System.out.println("Wrong Input!");
 		}
 	}
-	}while(choice !=1 || choice !=2 || choice !=3);
+	}while(choice !=1 || choice !=2);
 }
