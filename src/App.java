@@ -22,7 +22,14 @@ public class App
 		choice = myObj.nextInt();
 		do{
 		if(choice == 1){
-		    usersetting();
+			System.out.println("Input ID: ");
+			id = myObj.nextLine();
+			if(id equals(ADM123)){
+				adminsetting();
+			}
+			else{
+				usersetting();
+			}
 		}
 		else if(choice == 2){
 		    registersetting();
