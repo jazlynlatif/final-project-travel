@@ -13,7 +13,7 @@ public class App
     }
     
 	public static void main(String[] args) {
-		int choice;
+		int choice, id, pass;
 		Scanner myObj = new Scanner(System.in);
 		System.out.println("Main Page");
 		System.out.println("1. Login");
@@ -23,8 +23,9 @@ public class App
 		do{
 		if(choice == 1){
 			System.out.println("Input ID: ");
-			id = myObj.nextLine();
-			if(id equals(ADM123)){
+			id = myObj.next();
+			pass = myObj.next();
+			if((id equals(ADM123))&&(pass equals(ADMPASS)){
 				adminsetting();
 			}
 			else{
