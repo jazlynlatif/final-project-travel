@@ -18,7 +18,8 @@ public class App
 		System.out.println("Main Page");
 		System.out.println("1. Login");
 		System.out.println("2. Register");
-		System.out.println("Input Choice (1/2) :");
+		System.out.println("3. Exit");
+		System.out.println("Input Choice (1-3) :");
 		choice = myObj.nextInt();
 		do{
 		if(choice == 1){
