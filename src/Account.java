@@ -1,25 +1,25 @@
 import java.util.*;
 
 public class Account {
-    protected String username;
-    protected String password;
-    protected String login_status;
+    protected ArrayList<String> username = new ArrayList<String>();
+    protected ArrayList<String> password = new ArrayList<String>();
+    protected ArrayList<String> login_status = new ArrayList<String>();
     
-    account(String id, String pass){
-        this.username = id; 
-        this.password = pass; 
+    Account(String id, String pass){
+        this.username.add(id); 
+        this.password.add(pass); 
     }
     void set_data(String id, String pass){
-        this.username = id; 
-        this.password = pass;
+        this.username.add(id); 
+        this.password.add(pass);
     }
     
     void set_id(String id){
-        this.username = id; 
+        this.username.add(id); 
     }
     
     void set_pass(String pass){
-        this.password = pass; 
+        this.password.add(pass); 
     }
     
     String get_id(){

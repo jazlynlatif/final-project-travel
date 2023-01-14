@@ -1,24 +1,33 @@
-public class Packages{
-    protected ArrayList<String> namapaket = new ArrayList<String>();
-    protected ArrayList<String> jeniskendaraan = new ArrayList<String>();
-    protected ArrayList<String> destinasi = new ArrayList<String>();
-    protected ArrayList<Integer> price = new ArrayList<Integer>();
-    protected ArrayList<Integer> jumlahtiket = new ArrayList<Integer>();
+import java.util.*;
+
+public class Account {
+    protected ArrayList<String> username = new ArrayList<String>();
+    protected ArrayList<String> password = new ArrayList<String>();
+    protected ArrayList<String> login_status = new ArrayList<String>();
     
-    packages(String pakett,String jenisken,String dest,int harga,int jumlah){
-        this.namapaket.add(pakett);
-        this.jeniskendaraan.add(jenisken);
-        this.destinasi.add(dest);
-        this.price.add(harga);
-        this.jumlahtiket.add(jumlah);
+    Account(String id, String pass){
+        this.username.add(id); 
+        this.password.add(pass); 
+    }
+    void set_data(String id, String pass){
+        this.username.add(id); 
+        this.password.add(pass);
     }
     
-    void set_data(String pakett,String jenisken,String dest,int harga,int jumlah){
-        this.namapaket.add(pakett);
-        this.jeniskendaraan.add(jenisken);
-        this.destinasi.add(dest);
-        this.price.add(harga);
-        this.jumlahtiket.add(jumlah);
+    void set_id(String id){
+        this.username.add(id); 
+    }
+    
+    void set_pass(String pass){
+        this.password.add(pass); 
+    }
+    
+    String get_id(){
+        return id; 
+    }
+    
+    String get_pass(){
+        return pass; 
     }
     
 }

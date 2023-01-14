@@ -2,6 +2,14 @@
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar"
+        "lib/**/*.jar",
+        "c:\\Users\\CLASSROOM7\\Documents\\Kuliah\\OOP\\openjfx-19_windows-x64_bin-sdk\\lib\\javafx.base.jar",
+        "c:\\Users\\CLASSROOM7\\Documents\\Kuliah\\OOP\\openjfx-19_windows-x64_bin-sdk\\lib\\javafx.controls.jar",
+        "c:\\Users\\CLASSROOM7\\Documents\\Kuliah\\OOP\\openjfx-19_windows-x64_bin-sdk\\lib\\javafx.fxml.jar",
+        "c:\\Users\\CLASSROOM7\\Documents\\Kuliah\\OOP\\openjfx-19_windows-x64_bin-sdk\\lib\\javafx.graphics.jar",
+        "c:\\Users\\CLASSROOM7\\Documents\\Kuliah\\OOP\\openjfx-19_windows-x64_bin-sdk\\lib\\javafx.media.jar",
+        "c:\\Users\\CLASSROOM7\\Documents\\Kuliah\\OOP\\openjfx-19_windows-x64_bin-sdk\\lib\\javafx.swing.jar",
+        "c:\\Users\\CLASSROOM7\\Documents\\Kuliah\\OOP\\openjfx-19_windows-x64_bin-sdk\\lib\\javafx.web.jar",
+        "c:\\Users\\CLASSROOM7\\Documents\\Kuliah\\OOP\\openjfx-19_windows-x64_bin-sdk\\lib\\javafx-swt.jar"
     ]
 }

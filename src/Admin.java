@@ -2,12 +2,12 @@ import java.util.*;
 
 public class Admin extends Account{
     
-    admin(String id, String pass) {
+    Admin(String id, String pass) {
         super(id, pass);
     }
     
     void adminsetting(){
-
+        
     }
 
     void add_pack(){
