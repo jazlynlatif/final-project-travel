@@ -53,6 +53,7 @@ public class Main
         int choice;
 		Scanner myObj = new Scanner(System.in);
 		Customer cust = new Customer(null, null, null, null, null);
+		Packages pack = new Packages(null, null, null, 0, 0);
 		System.out.println("========================");
 		System.out.println("1. View Profile");
 		System.out.println("2. Modify Profile");
@@ -67,9 +68,9 @@ public class Main
 		    case 2:
 				cust.modify_data();
 		    case 3:
-				main(null);
+				pack.print_data();
 		    case 4:
-		        System.exit(0);
+		        main(null);
             
 		}
     }
@@ -83,6 +84,8 @@ public class Main
 	    System.out.print("Password: ");
 	    String upass = myObj.next();
 	    
+		myObj.nextLine();
+
 	    System.out.print("Full Name: ");
 	    String ufname = myObj.nextLine();
 	    
@@ -111,9 +114,10 @@ public class Main
 		do{
 		    System.out.print("\033[H\033[2J"); 
 		    if(choice == 1){
-			    System.out.println("Input ID: ");
+				System.out.println();
+			    System.out.print("Input ID: ");
 			    String id = myObj.next();
-			    System.out.println("Input Password: ");
+			    System.out.print("Input Password: ");
 			    String pass = myObj.next();
 			
 			    if((id.equals("ADM123"))&&(pass.equals("ADMPASS"))){
