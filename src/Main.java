@@ -2,10 +2,12 @@ import java.util.*;
 
 public class Main
 {
-    void adminsetting(){
+    
+    static void adminsetting(){
         System.out.print("\033[H\033[2J"); 
         int choice;
 		Scanner myObj = new Scanner(System.in);
+// 		paket travel = new paket(String pakett,String jenisken,String dest,int harga,int jumlah);
 		System.out.println("========================");
 		System.out.println("1. Add New Package");
 		System.out.println("2. Delete Package");
@@ -14,8 +16,8 @@ public class Main
 		System.out.println("========================");
 		System.out.println("Input Choice (1-4) :");
 		choice = myObj.nextInt();
+		System.out.print("\033[H\033[2J"); 
 		switch(choice){
-		    System.out.print("\033[H\033[2J"); 
 		    case 1:
 		        System.out.print("Package Name:");
 		        String name = myObj.nextLine();
@@ -31,48 +33,48 @@ public class Main
 		        
 		        System.out.print("Ticket Amount:");
 		        int jumlahtiket = myObj.nextInt();
-
-		        Packages output = new Packages(name, jeniskend, dest, harga, jumlahtiket);
-
+		        
+		      //  Packages output = new Packages();  
 		    case 2:
 		        System.out.print("Choose Package Number(Ex:1);");
+		        int choice1 = myObj.nextInt();
 		        
 		    case 3:
-		        
+		        System.out.println("Choose Package Number(Ex:1):");
+		        int choice2 = myObj.nextInt();
 		    case 4:
-				System.exit();
+		        System.exit(0);
 		}
 		
     }
     
-    void usersetting(){
+    static void usersetting(){
         System.out.print("\033[H\033[2J"); 
         int choice;
 		Scanner myObj = new Scanner(System.in);
-		Customer cust = new Customer(null);
-		Package travel = new Package(String pakett,String jenisken,String dest,int harga,int jumlah);
+// 		paket travel = new paket(String pakett,String jenisken,String dest,int harga,int jumlah);
 		System.out.println("========================");
 		System.out.println("1. View Profile");
 		System.out.println("2. Modify Profile");
 		System.out.println("3. Choose Travel Package");
-		System.out.println("4. Exit")
+		System.out.println("4. Exit");
 		System.out.println("========================");
 		System.out.println("Input Choice (1-4) :");
 		choice = myObj.nextInt();
 		switch (choice){
 		    case 1:
-		        cust.print_data();
+		      //  print_data();
 		    case 2:
-		        cust.modify_data();
+		      //  modify_data();
 		    case 3:
-		        main();
+		      //  main();
 		    case 4:
-		        System.exit();
+		        System.exit(0);
             
 		}
     }
     
-    void registersetting(){
+    static void registersetting(){
         System.out.print("\033[H\033[2J"); 
 		Scanner myObj = new Scanner(System.in);
 		System.out.println("Username: ");
@@ -96,7 +98,8 @@ public class Main
     
 	public static void main(String[] args) {
 	    System.out.print("\033[H\033[2J"); 
-		int choice, id, pass;
+	    
+	    Account check = new Account("tes","check");
 		Scanner myObj = new Scanner(System.in);
 		System.out.print("\033[H\033[2J"); 
 		System.out.println("Main Page");
@@ -104,28 +107,32 @@ public class Main
 		System.out.println("2. Register");
 		System.out.println("3. Exit");
 		System.out.println("Input Choice (1-3) :");
-		choice = myObj.nextInt();
+		int choice = myObj.nextInt();
 		do{
 		    System.out.print("\033[H\033[2J"); 
 		    if(choice == 1){
 			    System.out.println("Input ID: ");
-			    id = myObj.next();
+			    String id = myObj.next();
 			    System.out.println("Input Password: ");
-			    pass = myObj.next();
+			    String pass = myObj.next();
 			
-			    if((id equals("ADM123"))&&(pass equals("ADMPASS"))){
-				    adminsetting();
+			    if((id.equals("ADM123"))&&(pass.equals("ADMPASS"))){
+				    adminsetting(); 
 			    }
-			    else{
+			    else if(check.check_id(id,pass)){
 				    usersetting();
 		    	}
 		    }
 		    else if(choice == 2){
 		        registersetting();
 		    }
+		    else if(choice == 3){
+		        System.exit(0);
+		    }
 		    else{
 		        System.out.println("Wrong Input!");
 	    	}
-	    }
 	}while(choice != 1 || choice != 2);
+}
+
 }
