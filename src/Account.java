@@ -22,12 +22,23 @@ public class Account {
         this.password.add(pass); 
     }
     
-    String get_id(){
-        return id; 
+    boolean check_id(String id,String pass){
+        for(int i=0;i<username.size();i++){
+            if(id.equals(username.get(i)) && pass.equals(password.get(i))){
+                System.out.println("Login Success");
+                return true;
+            }
+        }
+        return false;
     }
     
-    String get_pass(){
-        return pass; 
+    String get_id(int i){
+        return username.get(i); 
     }
+    
+    String get_pass(int i){
+        return password.get(i); 
+    }
+    
     
 }
