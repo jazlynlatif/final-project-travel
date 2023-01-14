@@ -78,10 +78,10 @@ public class Main
         System.out.print("\033[H\033[2J"); 
 		Scanner myObj = new Scanner(System.in);
 		System.out.println("Username: ");
-	    String uname = myObj.next();
+	    String uname = myObj.nextLine();
 	    
 	    System.out.println("Password: ");
-	    String upass = myObj.next();
+	    String upass = myObj.nextLine();
 	    
 	    System.out.println("Full Name: ");
 	    String ufname = myObj.nextLine();
@@ -90,7 +90,7 @@ public class Main
 	    String adrs = myObj.nextLine();
 	    
 	    System.out.println("Email: ");
-	    String mail = myObj.next();
+	    String mail = myObj.nextLine();
 	    
 	    Customer data = new Customer(uname, upass, ufname, adrs, mail);
 		System.out.println("Your data has been registered!");
