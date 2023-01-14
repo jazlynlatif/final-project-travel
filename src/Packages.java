@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Packages{
     protected ArrayList<String> namapaket = new ArrayList<String>();
     protected ArrayList<String> jeniskendaraan = new ArrayList<String>();
@@ -30,4 +32,4 @@ public class Packages{
        System.out.println("=========================================================================================");
     }
     
-}
+} 
