@@ -48,11 +48,11 @@ public class Main
 		
     }
     
-    static void usersetting(){
+    static void usersetting(String id, String pass){
         System.out.print("\033[H\033[2J"); 
         int choice;
 		Scanner myObj = new Scanner(System.in);
-// 		paket travel = new paket(String pakett,String jenisken,String dest,int harga,int jumlah);
+		Customer cust = new Customer(null, null, null, null, null);
 		System.out.println("========================");
 		System.out.println("1. View Profile");
 		System.out.println("2. Modify Profile");
@@ -63,11 +63,11 @@ public class Main
 		choice = myObj.nextInt();
 		switch (choice){
 		    case 1:
-		      //  print_data();
+				// cust.print_udata(id, pass);
 		    case 2:
-		      //  modify_data();
+				cust.modify_data();
 		    case 3:
-		      //  main();
+				main(null);
 		    case 4:
 		        System.exit(0);
             
@@ -77,19 +77,19 @@ public class Main
     static void registersetting(){
         System.out.print("\033[H\033[2J"); 
 		Scanner myObj = new Scanner(System.in);
-		System.out.println("Username: ");
+		System.out.print("Username: ");
 	    String uname = myObj.nextLine();
 	    
-	    System.out.println("Password: ");
+	    System.out.print("Password: ");
 	    String upass = myObj.nextLine();
 	    
-	    System.out.println("Full Name: ");
+	    System.out.print("Full Name: ");
 	    String ufname = myObj.nextLine();
 	    
-	    System.out.println("Address: ");
+	    System.out.print("Address: ");
 	    String adrs = myObj.nextLine();
 	    
-	    System.out.println("Email: ");
+	    System.out.print("Email: ");
 	    String mail = myObj.nextLine();
 	    
 	    Customer data = new Customer(uname, upass, ufname, adrs, mail);
@@ -106,7 +106,7 @@ public class Main
 		System.out.println("1. Login");
 		System.out.println("2. Register");
 		System.out.println("3. Exit");
-		System.out.println("Input Choice (1-3) :");
+		System.out.print("Input Choice (1-3) :");
 		int choice = myObj.nextInt();
 		do{
 		    System.out.print("\033[H\033[2J"); 
@@ -120,7 +120,7 @@ public class Main
 				    adminsetting(); 
 			    }
 			    else if(check.check_id(id,pass)){
-				    usersetting();
+				    usersetting(id, pass);
 		    	}
 		    }
 		    else if(choice == 2){
