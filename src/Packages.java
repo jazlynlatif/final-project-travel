@@ -1,33 +1,33 @@
-import java.util.*;
-
-public class Account {
-    protected ArrayList<String> username = new ArrayList<String>();
-    protected ArrayList<String> password = new ArrayList<String>();
-    protected ArrayList<String> login_status = new ArrayList<String>();
+public class Packages{
+    protected ArrayList<String> namapaket = new ArrayList<String>();
+    protected ArrayList<String> jeniskendaraan = new ArrayList<String>();
+    protected ArrayList<String> destinasi = new ArrayList<String>();
+    protected ArrayList<Integer> price = new ArrayList<Integer>();
+    protected ArrayList<Integer> jumlahtiket = new ArrayList<Integer>();
     
-    Account(String id, String pass){
-        this.username.add(id); 
-        this.password.add(pass); 
-    }
-    void set_data(String id, String pass){
-        this.username.add(id); 
-        this.password.add(pass);
-    }
-    
-    void set_id(String id){
-        this.username.add(id); 
+    Packages(String pakett,String jenisken,String dest,int harga,int jumlah){
+        this.namapaket.add(pakett);
+        this.jeniskendaraan.add(jenisken);
+        this.destinasi.add(dest);
+        this.price.add(harga);
+        this.jumlahtiket.add(jumlah);
     }
     
-    void set_pass(String pass){
-        this.password.add(pass); 
+    void set_data(String pakett,String jenisken,String dest,int harga,int jumlah){
+        this.namapaket.add(pakett);
+        this.jeniskendaraan.add(jenisken);
+        this.destinasi.add(dest);
+        this.price.add(harga);
+        this.jumlahtiket.add(jumlah);
     }
     
-    String get_id(){
-        return id; 
-    }
-    
-    String get_pass(){
-        return pass; 
+    void print_data(){
+        System.out.println(" |No.\t || Package Name || Transportation || Destination || Price || Ticket Amount");
+        System.out.println("=========================================================================================");
+        for(int i=0;i<namapaket.size();i++){
+            System.out.println((i+1) + namapaket.get(i) + jeniskendaraan.get(i) + destinasi.get(i) + price.get(i) + jumlahtiket.get(i));
+        }
+       System.out.println("=========================================================================================");
     }
     
 }
