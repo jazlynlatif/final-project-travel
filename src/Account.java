@@ -23,11 +23,11 @@ public class Account {
     }
     
     String get_id(){
-        return id; 
+        return this.username;
     }
     
     String get_pass(){
-        return pass; 
+        return this.password;
     }
     
 }

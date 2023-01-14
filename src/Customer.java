@@ -5,10 +5,10 @@ public class Customer extends Account {
     private ArrayList<String> address = new ArrayList<String>();
     private ArrayList<String> cust_email = new ArrayList<String>();
     
-    Customer(String id, String pass, String cname, String addr, String cust_email) {
+    Customer(String id, String pass, String cname, String addr, String cmail) {
         super(id, pass);
         this.cust_name.add(cname);
-        this.address.address(addr);
+        this.address.add(addr);
         this.cust_email.add(cmail);
     }
     
@@ -54,7 +54,7 @@ public class Customer extends Account {
 // 		}
 //     }
     
-    void set_data(String id, String pass, String cust_name, String addr, String cust_email){
+    void set_data(String id, String pass, String cname, String addr, String cmail){
         super.username.add(id);
         super.password.add(pass);
         this.cust_name.add(cname);

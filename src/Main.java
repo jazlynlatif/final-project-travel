@@ -2,12 +2,10 @@ import java.util.*;
 
 public class Main
 {
-    
     void adminsetting(){
         System.out.print("\033[H\033[2J"); 
         int choice;
 		Scanner myObj = new Scanner(System.in);
-// 		paket travel = new paket(String pakett,String jenisken,String dest,int harga,int jumlah);
 		System.out.println("========================");
 		System.out.println("1. Add New Package");
 		System.out.println("2. Delete Package");
@@ -33,14 +31,16 @@ public class Main
 		        
 		        System.out.print("Ticket Amount:");
 		        int jumlahtiket = myObj.nextInt();
-		        
-		        Packages output = new Packages();  
+
+		        Packages output = new Packages(name, jeniskend, dest, harga, jumlahtiket);
+
 		    case 2:
 		        System.out.print("Choose Package Number(Ex:1);");
 		        
 		    case 3:
 		        
 		    case 4:
+				System.exit();
 		}
 		
     }
@@ -49,7 +49,8 @@ public class Main
         System.out.print("\033[H\033[2J"); 
         int choice;
 		Scanner myObj = new Scanner(System.in);
-		paket travel = new paket(String pakett,String jenisken,String dest,int harga,int jumlah);
+		Customer cust = new Customer(null);
+		Package travel = new Package(String pakett,String jenisken,String dest,int harga,int jumlah);
 		System.out.println("========================");
 		System.out.println("1. View Profile");
 		System.out.println("2. Modify Profile");
@@ -60,9 +61,9 @@ public class Main
 		choice = myObj.nextInt();
 		switch (choice){
 		    case 1:
-		        print_data();
+		        cust.print_data();
 		    case 2:
-		        modify_data();
+		        cust.modify_data();
 		    case 3:
 		        main();
 		    case 4:
@@ -87,7 +88,7 @@ public class Main
 	    String adrs = myObj.nextLine();
 	    
 	    System.out.println("Email: ");
-	    mail = myObj.next();
+	    String mail = myObj.next();
 	    
 	    Customer data = new Customer(uname, upass, ufname, adrs, mail);
 		System.out.println("Your data has been registered!");
