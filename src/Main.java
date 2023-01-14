@@ -1,5 +1,5 @@
 import java.util.*;
-
+import java.io.*;
 public class Main
 {
     
@@ -94,11 +94,11 @@ public class Main
 	    
 	    Customer data = new Customer(uname, upass, ufname, adrs, mail);
 		System.out.println("Your data has been registered!");
+		main(null);
     }
     
 	public static void main(String[] args) {
 	    System.out.print("\033[H\033[2J"); 
-	    
 	    Account check = new Account("tes","check");
 		Scanner myObj = new Scanner(System.in);
 		System.out.print("\033[H\033[2J"); 
@@ -132,7 +132,6 @@ public class Main
 		    else{
 		        System.out.println("Wrong Input!");
 	    	}
-	}while(choice != 1 || choice != 2);
-}
-
+		}while(choice != 1 || choice != 2);
+	}
 }
