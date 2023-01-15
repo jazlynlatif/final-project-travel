@@ -1,18 +1,34 @@
 import java.util.*;
-import java.io.*;
+ import java.io.*;
+import java.util.ArrayList;
+
 public class Main
 {
+    
+    static ArrayList<Customer> cust =new ArrayList<Customer>();
+    // static List<Account> user =new ArrayList<>();
+    
+     public static void promptEnterKey(){
+        System.out.println("Press \"ENTER\" to continue...");
+        try {
+            int read = System.in.read(new byte[2]);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
     
     static void adminsetting(){
         System.out.print("\033[H\033[2J"); 
         int choice;
 		Scanner myObj = new Scanner(System.in);
-// 		paket travel = new paket(String pakett,String jenisken,String dest,int harga,int jumlah);
+
 		System.out.println("========================");
 		System.out.println("1. Add New Package");
 		System.out.println("2. Delete Package");
 		System.out.println("3. Modify Package");
-		System.out.println("4. Exit");
+		System.out.println("4. Back");
+		System.out.println("5.Exit");
 		System.out.println("========================");
 		System.out.println("Input Choice (1-4) :");
 		choice = myObj.nextInt();
@@ -43,17 +59,18 @@ public class Main
 		        System.out.println("Choose Package Number(Ex:1):");
 		        int choice2 = myObj.nextInt();
 		    case 4:
+		        main(null);
+		    case 5:
 		        System.exit(0);
 		}
 		
     }
     
-    static void usersetting(String id, String pass){
+    static void usersetting(){
         System.out.print("\033[H\033[2J"); 
         int choice;
 		Scanner myObj = new Scanner(System.in);
-		Customer cust = new Customer(null, null, null, null, null);
-		Packages pack = new Packages(null, null, null, 0, 0);
+// 		paket travel = new paket(String pakett,String jenisken,String dest,int harga,int jumlah);
 		System.out.println("========================");
 		System.out.println("1. View Profile");
 		System.out.println("2. Modify Profile");
@@ -64,13 +81,14 @@ public class Main
 		choice = myObj.nextInt();
 		switch (choice){
 		    case 1:
-				// cust.print_udata(id, pass);
+		      //  print_data();
 		    case 2:
-				cust.modify_data();
+		      //  modify_data();
 		    case 3:
-				pack.print_data();
+		      //  main();
 		    case 4:
-		        main(null);
+		        System.out.println("Thank you for trying out this program!!!");
+		        System.exit(0);
             
 		}
     }
@@ -84,8 +102,7 @@ public class Main
 	    System.out.print("Password: ");
 	    String upass = myObj.next();
 	    
-		myObj.nextLine();
-
+	    myObj.nextLine();
 	    System.out.print("Full Name: ");
 	    String ufname = myObj.nextLine();
 	    
@@ -95,47 +112,77 @@ public class Main
 	    System.out.print("Email: ");
 	    String mail = myObj.next();
 	    
-	    Customer data = new Customer(uname, upass, ufname, adrs, mail);
+	   // Customer data = new Customer(uname, upass, ufname, adrs, mail);
+	   cust.add(new Customer(uname, upass, ufname, adrs, mail));
 		System.out.println("Your data has been registered!");
+		promptEnterKey();
 		main(null);
     }
     
 	public static void main(String[] args) {
 	    System.out.print("\033[H\033[2J"); 
-	    Account check = new Account("tes","check");
-		Scanner myObj = new Scanner(System.in);
+	    
+	   // Account check = new Account("tes","check");
+	   String idd = "";
+	   String passv = "";
+	    Scanner myObj = new Scanner(System.in);
 		System.out.print("\033[H\033[2J"); 
 		System.out.println("Main Page");
 		System.out.println("1. Login");
 		System.out.println("2. Register");
+		System.out.println("4.Check Account");
 		System.out.println("3. Exit");
-		System.out.print("Input Choice (1-3) :");
+		System.out.println("Input Choice (1-3) :");
 		int choice = myObj.nextInt();
 		do{
 		    System.out.print("\033[H\033[2J"); 
 		    if(choice == 1){
-				System.out.println();
 			    System.out.print("Input ID: ");
 			    String id = myObj.next();
 			    System.out.print("Input Password: ");
 			    String pass = myObj.next();
+			    
+			    for(int i=0;i<cust.size();i++){
+			        if(id.equals(cust.get(i).get_id()) && pass.equals(cust.get(i).get_pass()))
+			        idd = id;
+			        passv = pass;
+			    }
 			
 			    if((id.equals("ADM123"))&&(pass.equals("ADMPASS"))){
 				    adminsetting(); 
 			    }
-			    else if(check.check_id(id,pass)){
-				    usersetting(id, pass);
+			    else if((id.equals(idd)) && (pass.equals(passv))){
+				    usersetting();
+				    main(null);
+		    	}
+		    	else{
+		    	    System.out.print("Invalid Input");
+		    	    promptEnterKey();
+		    	    main(null);
 		    	}
 		    }
 		    else if(choice == 2){
 		        registersetting();
+		        main(null);
 		    }
 		    else if(choice == 3){
+		        System.out.println("Thank you for trying out this program!!!");
+		        promptEnterKey();
 		        System.exit(0);
+		    }
+		    else if(choice == 4){
+		        for(int i=0;i<cust.size();i++){
+		        cust.get(i).check_account();
+		        }
+		        promptEnterKey();
+		        main(null);
 		    }
 		    else{
 		        System.out.println("Wrong Input!");
+		        promptEnterKey();
+		        main(null);
 	    	}
-		}while(choice != 1 || choice != 2);
-	}
+	}while(choice != 1 || choice != 2);
+}
+
 }
