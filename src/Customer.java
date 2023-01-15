@@ -1,63 +1,50 @@
 import java.util.*;
 
-public class Customer extends Account {
-    protected ArrayList<String> cust_name = new ArrayList<String>();
-    private ArrayList<String> address = new ArrayList<String>();
-    private ArrayList<String> cust_email = new ArrayList<String>();
+class Customer extends Account {
+    // private ArrayList<String> cust_name = new ArrayList<String>();
+    // private ArrayList<String> address = new ArrayList<String>();
+    // private ArrayList<String> cust_email = new ArrayList<String>();
+    
+    private String cust_name;
+    private String address;
+    private String cust_email;
     
     Customer(String id, String pass, String cname, String addr, String cmail) {
         super(id, pass);
-        this.cust_name.add(cname);
-        this.address.add(addr);
-        this.cust_email.add(cmail);
-    }
-
-    void set_data(String id, String pass, String cname, String addr, String cmail){
-        super.username.add(id);
-        super.password.add(pass);
-        this.cust_name.add(cname);
-        this.address.add(addr);
-        this.cust_email.add(cmail);
+        this.cust_name = cname;
+        this.address = addr;
+        this.cust_email = cmail;
     }
     
-    void get_data(int i){
-        System.out.println("Username = " + super.username.get(i));
-        System.out.println("Password = " + super.password.get(i));
-        System.out.println("Name = " + this.cust_name.get(i));
-        System.out.println("Address = " + this.address.get(i));
-        System.out.println("Email = " + this.cust_email.get(i));
+    void set_data(String id, String pass, String cname, String addr, String cmail){
+        super.username = id;
+        super.password = pass;
+        this.cust_name = cname;
+        this.address = addr;
+        this.cust_email = cmail;
+    }
+    
+    void get_data(){
+        System.out.println("Username = " + super.username);
+        System.out.println("Password = " + super.password);
+        System.out.println("Name = " + this.cust_name);
+        System.out.println("Address = " + this.address);
+        System.out.println("Email = " + this.cust_email);
     }
     
     void modify_data(){
         
     }
     
-    void print_data(){
-        for(int i=0;i<cust_name.size();i++){
-            System.out.println("Username = " + super.username.get(i));
-            System.out.println("Password = " + super.password.get(i));
-            System.out.println("Name = " + this.cust_name.get(i));
-            System.out.println("Address = " + this.address.get(i));
-            System.out.println("Email = " + this.cust_email.get(i));
-        }
+    void check_account(){
+            System.out.println(". "+super.username +" "+ super.password);
     }
-
-    // void print_udata(String id, String pass){   //for user view profile
-    //     int num = check_userid(id, pass, id);
-    //     System.out.println("Username = " + super.username.get(num));
-    //     System.out.println("Password = " + super.password.get(num));
-    //     System.out.println("Name = " + this.cust_name.get(num));
-    //     System.out.println("Address = " + this.address.get(num));
-    //     System.out.println("Email = " + this.cust_email.get(num));
-    // }
-
-    // int check_userid(String id, String pass, String string){
-    //     int num;
-    //     for(int i=0;i<string.size();i++){
-    //         if((id.compareTo(id.get(i)) && pass.compareTo(pass.get(i))) == 0){
-    //             num = i;
-    //         }
-    //     }
-    //     return num;
-    // }
+    
+    void print_data(){
+        System.out.println("Username = " + super.username);
+        System.out.println("Password = " + super.password);
+        System.out.println("Name = " + this.cust_name);
+        System.out.println("Address = " + this.address);
+        System.out.println("Email = " + this.cust_email);
+    }
 }
