@@ -1,40 +1,43 @@
 import java.util.*;
 
-public class Account {
-    protected ArrayList<String> username = new ArrayList<String>();
-    protected ArrayList<String> password = new ArrayList<String>();
-    protected ArrayList<String> login_status = new ArrayList<String>();
+class Account {
+    protected String username;
+    protected String password;
     
     Account(String id, String pass){
-        this.username.add(id);
-        this.password.add(pass);
+        this.username = id; 
+        this.password = pass; 
     }
-
-    boolean check_id(String id,String pass){
-        for(int i=0;i<username.size();i++){
-            if(id.equals(username.get(i)) && pass.equals(password.get(i))){
-                return true;
-            }
-        }
-        return false;
-    }
-    public void set_data(ArrayList<String> id, ArrayList<String>pass) {
-        this.username = id;
+    void set_data(String id, String pass){
+        this.username = id; 
         this.password = pass;
     }
-    public ArrayList<String> get_id() {
-        return username;
+    
+    void set_id(String id){
+        this.username = id; 
     }
-    public ArrayList<String> get_pass() {
-        return password;
+    
+    void set_pass(String pass){
+        this.password = pass; 
     }
-    public void get_logstatus() {
-        boolean checkid;
-        if(checkid = true){
-            System.out.println("Login Success");
+    
+    boolean check_id(String id,String pass){
+            if(id.equals(username) && pass.equals(password)){
+                System.out.println("Login Success");
+                return true;
+            }
+        return false;
+    }
+    
+    String get_id(){
+        return this.username; 
+    }
+    
+    String get_pass(){
+        return this.password; 
+    }
+    
+    void check_account(){
+            System.out.println(". "+this.username +" "+ this.password);
         }
-        else{
-            System.out.println("Login Failed");
-        }
     }
-}
